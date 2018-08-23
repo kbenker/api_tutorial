@@ -2,6 +2,7 @@ import us
 import civis
 from datetime import datetime
 from census import Census
+import pandas as pd
 
 client = civis.APIClient()
 
