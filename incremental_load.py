@@ -1,7 +1,13 @@
-import census
 import us
 import civis
 from datetime import datetime
+from census import Census
+
+client = civis.APIClient()
+
+CENSUS_API_KEY = client.credentials.get(9166).username
+
+c = Census(CENSUS_API_KEY)
 
 # get date of most recent data from table
 max_year = civis.io.read_civis_sql('select max(year) from scratch.census_commute', 'Civis Database')[1][0]
