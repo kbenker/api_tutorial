@@ -10,7 +10,7 @@ max_year = civis.io.read_civis_sql('select max(year) from scratch.census_commute
 new_year = int(max_year) + 1
 try:
     c.acs5.state('NAME', us.states.DC.fips, year=new_year)
-except UnsupportedYearException:
+except:
     print("No newer data available")
 
 # if new data available, get it!
