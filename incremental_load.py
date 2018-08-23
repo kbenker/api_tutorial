@@ -21,6 +21,7 @@ except:
 
 # if new data available, get it!
 print("Getting new data")
+fields = ('NAME', 'B08006_008E', 'B08006_001E')
 data_all = []
 for state in us.STATES:
     data_all.extend(c.acs5.state_county_tract(fields, state.fips, Census.ALL, Census.ALL))
